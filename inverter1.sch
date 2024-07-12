@@ -38,7 +38,7 @@ lab=VN}
 N -60 -180 -0 -180 {
 lab=VP}
 C {sky130_fd_pr/nfet_01v8.sym} 20 -30 0 0 {name=M1
-W=0.5
+W=1
 L=1
 nf=1 
 mult=1
