@@ -1,0 +1,35 @@
+* SPICE3 file created from ringosc3_layout.ext - technology: sky130A
+
+X0 inverter1_1/A OUT VN VN sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0.175 ps=1.7 w=0.5 l=0.15
+X1 inverter1_1/A OUT VP VP sky130_fd_pr__pfet_01v8 ad=0.175 pd=1.7 as=0.175 ps=1.7 w=0.5 l=0.15
+X2 inverter1_2/A inverter1_1/A VN VN sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0.875 ps=8.5 w=0.5 l=0.15
+X3 inverter1_2/A inverter1_1/A VP VP sky130_fd_pr__pfet_01v8 ad=0.175 pd=1.7 as=0.875 ps=8.5 w=0.5 l=0.15
+X4 inverter1_3/A inverter1_2/A VN VN sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+X5 inverter1_3/A inverter1_2/A VP VP sky130_fd_pr__pfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+X6 inverter1_4/A inverter1_3/A VN VN sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+X7 inverter1_4/A inverter1_3/A VP VP sky130_fd_pr__pfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+X8 OUT inverter1_4/A VN VN sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+X9 OUT inverter1_4/A VP VP sky130_fd_pr__pfet_01v8 ad=0.175 pd=1.7 as=0 ps=0 w=0.5 l=0.15
+C0 inverter1_4/A VN 0.021285f
+C1 inverter1_2/A inverter1_1/A 0.058094f
+C2 inverter1_3/A VN 0.021874f
+C3 inverter1_2/A OUT 0.089434f
+C4 inverter1_2/A VP 0.19986f
+C5 inverter1_3/A inverter1_2/A 0.058094f
+C6 inverter1_2/A VN 0.021874f
+C7 OUT inverter1_1/A 0.13774f
+C8 inverter1_4/A OUT 0.132732f
+C9 inverter1_1/A VP 0.199063f
+C10 OUT VP 0.555621f
+C11 inverter1_3/A OUT 0.08932f
+C12 inverter1_4/A VP 0.194358f
+C13 inverter1_3/A inverter1_4/A 0.058094f
+C14 inverter1_3/A VP 0.19986f
+C15 VN inverter1_1/A 0.021874f
+C16 OUT VN 0.360335f
+C17 VP 0 2.19741f **FLOATING
+C18 inverter1_4/A 0 0.397168f **FLOATING
+C19 inverter1_3/A 0 0.378309f **FLOATING
+C20 inverter1_2/A 0 0.378309f **FLOATING
+C21 inverter1_1/A 0 0.391588f **FLOATING
+C22 OUT 0 0.574507f **FLOATING

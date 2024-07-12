@@ -1,0 +1,57 @@
+** sch_path: /home/ahmadjabar/dsrt2024_Ring-Oscillator_Ahmad-Jabar-Ilmi/ring_oscilator_tb.sch
+**.subckt ring_oscilator_tb
+C1 OUT GND 1f m=1
+V1 net1 GND 1.8
+x2 net1 OUT GND ring_oscillator
+**** begin user architecture code
+
+
+.option wnflag = 1
+.option savecurrents
+.control
+save all
+tran 1p 10n
+plot OUT
+op
+.endc
+
+
+ .lib /home/ahmadjabar/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.param mc_mm_switch = 0
+.param mc_pr_switch = 1
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  ring_oscillator.sym # of pins=3
+** sym_path: /home/ahmadjabar/dsrt2024_Ring-Oscillator_Ahmad-Jabar-Ilmi/ring_oscillator.sym
+** sch_path: /home/ahmadjabar/dsrt2024_Ring-Oscillator_Ahmad-Jabar-Ilmi/ring_oscillator.sch
+.subckt ring_oscillator VP OUT VN
+*.iopin VP
+*.iopin VN
+*.iopin OUT
+x1 VP net1 net2 VN inverter1
+x2 VP net2 net3 VN inverter1
+x3 VP OUT net1 VN inverter1
+x4 VP net3 net4 VN inverter1
+x5 VP net4 OUT VN inverter1
+.ends
+
+
+* expanding   symbol:  inverter1.sym # of pins=4
+** sym_path: /home/ahmadjabar/dsrt2024_Ring-Oscillator_Ahmad-Jabar-Ilmi/inverter1.sym
+** sch_path: /home/ahmadjabar/dsrt2024_Ring-Oscillator_Ahmad-Jabar-Ilmi/inverter1.sch
+.subckt inverter1 VP A Y VN
+*.ipin A
+*.opin Y
+*.iopin VP
+*.iopin VN
+XM1 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end
